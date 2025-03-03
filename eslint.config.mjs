@@ -29,7 +29,18 @@ export default tseslint.config(
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn'
+      '@typescript-eslint/no-unsafe-argument': 'warn',
+      // Fix errors related to commas and semicolons:
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'lf',
+          semi: true,
+          trailingComma: 'all',
+        },
+      ],
+      'comma-dangle': ['error', 'always-multiline'], // Allow trailing commas
+      semi: ['error', 'always'], // Require semicolons
     },
   },
 );
